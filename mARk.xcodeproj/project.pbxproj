@@ -15,6 +15,7 @@
 		A6352EC12218FD7900AAEA08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6352EBF2218FD7900AAEA08 /* LaunchScreen.storyboard */; };
 		A6352ECC2218FD7A00AAEA08 /* mARkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6352ECB2218FD7A00AAEA08 /* mARkTests.swift */; };
 		A6352ED72218FD7A00AAEA08 /* mARkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6352ED62218FD7A00AAEA08 /* mARkUITests.swift */; };
+		A6352EE52218FFAA00AAEA08 /* Sphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6352EE42218FFAA00AAEA08 /* Sphere.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		A6352ED22218FD7A00AAEA08 /* mARkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mARkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6352ED62218FD7A00AAEA08 /* mARkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mARkUITests.swift; sourceTree = "<group>"; };
 		A6352ED82218FD7A00AAEA08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6352EE42218FFAA00AAEA08 /* Sphere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sphere.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				A6352EB42218FD7800AAEA08 /* AppDelegate.swift */,
 				A6352EB62218FD7800AAEA08 /* art.scnassets */,
 				A6352EB82218FD7800AAEA08 /* ViewController.swift */,
+				A6352EE42218FFAA00AAEA08 /* Sphere.swift */,
 				A6352EBA2218FD7800AAEA08 /* Main.storyboard */,
 				A6352EBD2218FD7900AAEA08 /* Assets.xcassets */,
 				A6352EBF2218FD7900AAEA08 /* LaunchScreen.storyboard */,
@@ -262,6 +265,7 @@
 			files = (
 				A6352EB92218FD7800AAEA08 /* ViewController.swift in Sources */,
 				A6352EB52218FD7800AAEA08 /* AppDelegate.swift in Sources */,
+				A6352EE52218FFAA00AAEA08 /* Sphere.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

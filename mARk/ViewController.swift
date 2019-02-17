@@ -13,6 +13,7 @@ import ARKit
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
+    var spheres: [Sphere] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Set the scene to the view
         sceneView.scene = scene
+        
+        let tapRecog = UITapGestureRecognizer(target: self, action: #selector(self.didTapScreen(_:)))
+        self.sceneView.addGestureRecognizer(tapRecog)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,11 +44,40 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.session.run(configuration)
     }
     
+    @objc func didTapScreen(_ recog: UITapGestureRecognizer) {
+        let location = recog.location(in: self.sceneView)
+        print("X: \(location.x), Y: \(location.y)")
+        
+        if let cameraNode = self.sceneView.pointOfView {
+            
+            let distance: Float = 0.3 // Hardcoded depth
+            let pos = sceneSpacePosition(inFrontOf: cameraNode, atDistance: distance, x: 0, y: 0)
+            
+            addSphere(position: pos)
+        }
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         // Pause the view's session
         sceneView.session.pause()
+    }
+    
+    func addSphere(position: SCNVector3) {
+        print("adding sphere at point: \(position)")
+        let sphere: Sphere = Sphere(position: position)
+        self.sceneView.scene.rootNode.addChildNode(sphere)
+        // if we keep an array of these babies, then calling
+        // sphere.clear() on each will remove them from the scene
+        spheres.append(sphere)
+    }
+    
+    func sceneSpacePosition(inFrontOf node: SCNNode, atDistance distance: Float, x: Float, y: Float) -> SCNVector3 {
+        let localPosition = SCNVector3(x: x, y: y, z: -distance)
+        let scenePosition = node.convertPosition(localPosition, to: nil)
+        // to: nil is automatically scene space
+        return scenePosition
     }
 
     // MARK: - ARSCNViewDelegate
