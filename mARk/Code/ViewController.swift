@@ -25,7 +25,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
 //    latitude: 33.6489, longitude: -117.8421
     @IBOutlet var sceneView: ARSCNView!
     var spheres: [Sphere] = []
-    var currentLocation: CLLocation! = CLLocation(latitude: 33.6489, longitude: -117.8421  ) // utc not where i am
+    var currentLocation: CLLocation! = CLLocation(latitude: 33.6490, longitude: -117.8422) // CLLocation(latitude: 33.6489, longitude: -117.8421  ) // utc not where i am
     var locManager: CLLocationManager!
     let setLat = 33.64774
     let setLong = -117.83562
@@ -65,7 +65,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         
         let db = Firestore.firestore()
         
-        // THIS IS HARD CODED RIGHT NOW
+        // THIS IS HARD CODED RIGHT NOW ; AKA if CLLocation Can't Find a loc, we're at Irvine
         let latitude = self.currentLocation.coordinate.latitude
         let longitude = self.currentLocation.coordinate.longitude
         
@@ -86,8 +86,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         
         let markQuery = db.collection("marks")
 
-        
-        markQuery.getDocuments { (snapshot, error) in
+        markQuery.addSnapshotListener { (snapshot, error) in
             if let error = error {
                 print("Error getting documents: \(error)")
             } else {
@@ -134,6 +133,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
 
         // Run the view's session
         sceneView.session.run(configuration)
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
     @objc func didTapScreen(_ recog: UITapGestureRecognizer) {

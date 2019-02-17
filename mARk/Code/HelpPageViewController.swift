@@ -12,7 +12,7 @@ class HelpPageViewController: UIPageViewController {
     private(set) lazy var orderedViewControllers: [UIViewController] = {
         return [self.vcWithName("welcomeVC"), self.vcWithName("introPage1"),
                 self.vcWithName("introPage2"), self.vcWithName("introPage3"),
-                self.vcWithName("finalPage")]
+                self.vcWithName("permissionsVC"), self.vcWithName("finalPage")]
     }()
     
     override func viewDidLoad() {

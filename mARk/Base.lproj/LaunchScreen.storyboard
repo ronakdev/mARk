@@ -18,62 +18,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yf4-Xh-ayL">
-                                <rect key="frame" x="60" y="212" width="255" height="149"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What will your mark be?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDY-oE-Fx5">
+                                <rect key="frame" x="71" y="363" width="233" height="38"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="149" id="SSq-lo-c6j"/>
-                                    <constraint firstAttribute="width" constant="255" id="a5o-nq-gfL"/>
+                                    <constraint firstAttribute="height" constant="38" id="Q2k-4f-qt9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yf4-Xh-ayL">
+                                <rect key="frame" x="38" y="206" width="299" height="149"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="149" id="qfP-RB-CB1"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="m">
                                         <attributes>
                                             <font key="NSFont" size="109" name="Avenir-Heavy"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="a">
                                         <attributes>
                                             <color key="NSColor" red="0.12549019607843137" green="0.69411764705882351" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="109" name="Avenir-Heavy"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="r">
                                         <attributes>
                                             <color key="NSColor" red="0.25098039215686274" green="0.38431372549019605" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="109" name="Avenir-Heavy"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="k">
                                         <attributes>
                                             <font key="NSFont" size="109" name="Avenir-Heavy"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=".">
+                                        <attributes>
+                                            <color key="NSColor" red="0.18431372549019609" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="109" name="Avenir-Heavy"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What will your mark be?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDY-oE-Fx5">
-                                <rect key="frame" x="71" y="363" width="233" height="38"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="eUL-ej-DZl"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Yf4-Xh-ayL" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Cqb-zi-zVB"/>
-                            <constraint firstItem="Yf4-Xh-ayL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="HHn-6Y-TpL"/>
-                            <constraint firstItem="IDY-oE-Fx5" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="JD4-uA-qPG"/>
-                            <constraint firstItem="Yf4-Xh-ayL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="192" id="L7K-87-hFD"/>
-                            <constraint firstItem="IDY-oE-Fx5" firstAttribute="top" secondItem="Yf4-Xh-ayL" secondAttribute="bottom" constant="2" id="dax-w8-Y0c"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Yf4-Xh-ayL" secondAttribute="trailing" constant="60" id="m2H-qE-chA"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IDY-oE-Fx5" secondAttribute="trailing" constant="71" id="r0p-6b-t2z"/>
-                            <constraint firstItem="IDY-oE-Fx5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="71" id="s3d-dt-XWU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Yf4-Xh-ayL" secondAttribute="trailing" constant="38" id="1Yb-JV-uRn"/>
+                            <constraint firstItem="Yf4-Xh-ayL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="38" id="CgU-xu-uM2"/>
+                            <constraint firstItem="IDY-oE-Fx5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="71" id="UR3-tM-bgG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IDY-oE-Fx5" secondAttribute="trailing" constant="71" id="mgq-52-uKJ"/>
+                            <constraint firstItem="Yf4-Xh-ayL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="186" id="p62-mX-WQx"/>
+                            <constraint firstItem="IDY-oE-Fx5" firstAttribute="top" secondItem="Yf4-Xh-ayL" secondAttribute="bottom" constant="8" id="vig-GB-Wh1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

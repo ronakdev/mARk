@@ -79,11 +79,8 @@ class Sphere: SCNNode {
         let revertColorAction = SCNAction.run { (node) in
             let material: SCNMaterial = SCNMaterial()
             
-            if editable {
-                material.diffuse.contents = UIColor.red
-            } else {
-                material.diffuse.contents = self.StringFromUIColor(self.color)
-            }
+            material.diffuse.contents = self.uicolor
+            
             self.sphereGeometry.materials = [material]
             self.sphereNode.geometry = self.sphereGeometry
         }
