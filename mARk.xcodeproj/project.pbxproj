@@ -20,6 +20,7 @@
 		A6352ECC2218FD7A00AAEA08 /* mARkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6352ECB2218FD7A00AAEA08 /* mARkTests.swift */; };
 		A6352ED72218FD7A00AAEA08 /* mARkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6352ED62218FD7A00AAEA08 /* mARkUITests.swift */; };
 		A6352EE52218FFAA00AAEA08 /* Sphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6352EE42218FFAA00AAEA08 /* Sphere.swift */; };
+		A69D03172219456E004F0347 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69D03162219456E004F0347 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		A6352ED62218FD7A00AAEA08 /* mARkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mARkUITests.swift; sourceTree = "<group>"; };
 		A6352ED82218FD7A00AAEA08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6352EE42218FFAA00AAEA08 /* Sphere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sphere.swift; sourceTree = "<group>"; };
+		A69D03162219456E004F0347 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B6F4AA27B7B554B1FC9FA184 /* Pods-mARkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mARkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mARkTests/Pods-mARkTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BC9D495115F3930EF819F727 /* Pods_mARkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mARkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0E095E2FA8FC4F971D9701B /* Pods-mARk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mARk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mARk/Pods-mARk.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				A6352EB62218FD7800AAEA08 /* art.scnassets */,
 				A6352EB82218FD7800AAEA08 /* ViewController.swift */,
 				A6352EE42218FFAA00AAEA08 /* Sphere.swift */,
+				A69D03162219456E004F0347 /* Extensions.swift */,
 				A6352EBA2218FD7800AAEA08 /* Main.storyboard */,
 				A6352EBD2218FD7900AAEA08 /* Assets.xcassets */,
 				A6352EBF2218FD7900AAEA08 /* LaunchScreen.storyboard */,
@@ -417,6 +420,7 @@
 				A6352EB92218FD7800AAEA08 /* ViewController.swift in Sources */,
 				A6352EB52218FD7800AAEA08 /* AppDelegate.swift in Sources */,
 				A6352EE52218FFAA00AAEA08 /* Sphere.swift in Sources */,
+				A69D03172219456E004F0347 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

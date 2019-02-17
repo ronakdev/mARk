@@ -52,6 +52,10 @@ class Sphere: SCNNode {
         
         dict["relativeLocation"] = ["x": "\(self.sphereNode.position.x)", "y": "\(self.sphereNode.position.y)", "z": "\(self.sphereNode.position.z)"]
         dict["positionVector"] = "\(self.sphereNode.position.x),\(self.sphereNode.position.y),\(self.sphereNode.position.z)"
+        
+        // do geohasing nonsense here
+        dict["setDistance"] = sqrt( (lat)**2 + (lng)**2)
+        
         return dict
     }
     

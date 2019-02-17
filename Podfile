@@ -8,6 +8,7 @@ target 'mARk' do
   # Pods for mARk
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
+  pod 'ColorSlider', '~> 4.3'
 
   target 'mARkTests' do
     inherit! :search_paths

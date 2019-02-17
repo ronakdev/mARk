@@ -40,6 +40,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         let tapRecog = UITapGestureRecognizer(target: self, action: #selector(self.didTapScreen(_:)))
         self.sceneView.addGestureRecognizer(tapRecog)
         
+        // loading in that data
+        
         let db = Firestore.firestore()
         
         let latitude = self.currentLocation.coordinate.latitude
@@ -57,8 +59,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
 
         print("latitude: \(latitude)")
         print("longitude: \(longitude)")
+        let ourSetDistance = sqrt( (latitude)**2 + (longitude)**2)
         
-        let markQuery = db.collection("marks") //.whereField("lat", isLessThan: greaterLat).whereField("lat", isGreaterThan: lowerLat)
+        let markQuery = db.collection("marks")
+        //.whereField(sqrt("setDistance")**2 + ourSetDistance**2), "
+        //.whereField("lat", isLessThan: greaterLat).whereField("lat", isGreaterThan: lowerLat)
         
         markQuery.getDocuments { (snapshot, error) in
             if let error = error {
