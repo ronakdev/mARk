@@ -9,14 +9,21 @@
 import UIKit
 import SceneKit
 import ARKit
+import Firebase
+import CoreLocation
 
-class ViewController: UIViewController, ARSCNViewDelegate {
+class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     var spheres: [Sphere] = []
+    var currentLocation: CLLocation! = CLLocation(latitude: 33.6489, longitude: -117.8421)
+    var locManager: CLLocationManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locManager = CLLocationManager()
+        locManager.requestWhenInUseAuthorization()
         
         // Set the view's delegate
         sceneView.delegate = self
@@ -32,6 +39,53 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         let tapRecog = UITapGestureRecognizer(target: self, action: #selector(self.didTapScreen(_:)))
         self.sceneView.addGestureRecognizer(tapRecog)
+        
+        let db = Firestore.firestore()
+        
+        let latitude = self.currentLocation.coordinate.latitude
+        let longitude = self.currentLocation.coordinate.longitude
+        
+        let lat = 0.0144927536231884
+        let lon = 0.0181818181818182
+        let distance = 0.0189394
+        
+        let lowerLat = latitude - (lat * distance)
+        let lowerLon = longitude - (lon * distance)
+        
+        let greaterLat = latitude + (lat * distance)
+        let greaterLon = longitude + (lon * distance)
+
+        print("latitude: \(latitude)")
+        print("longitude: \(longitude)")
+        
+        let markQuery = db.collection("marks") //.whereField("lat", isLessThan: greaterLat).whereField("lat", isGreaterThan: lowerLat)
+        
+        markQuery.getDocuments { (snapshot, error) in
+            if let error = error {
+                print("Error getting documents: \(error)")
+            } else {
+                
+                for document in snapshot!.documents {
+                    print("\(document.documentID) => \(document.data())")
+                    let nodes = document.data()["mark"] as! [[String: Any]]
+                    for data in nodes {
+//                        let xData = ((data["relativeLocation"] as! [String: Any])["x"]) as! Float
+                        
+//                        print(xData)
+                        
+                        
+                        self.addSphere(position:
+                            SCNVector3(
+                                Float((data["relativeLocation"] as! [String: Any])["x"] as! String)!,
+                                Float((data["relativeLocation"] as! [String: Any])["y"] as! String)!,
+                                Float((data["relativeLocation"] as! [String: Any])["z"] as! String)!
+                            )
+                        )
+                        self.spheres = []
+                    }
+                }
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,6 +108,23 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             let pos = sceneSpacePosition(inFrontOf: cameraNode, atDistance: distance, x: 0, y: 0)
             
             addSphere(position: pos)
+        }
+    }
+    
+    @IBAction func shareNode(_ sender: UIButton) {
+        print(CLLocationManager.authorizationStatus() == .authorizedWhenInUse)
+        if self.currentLocation != nil {
+            var nodes = [[String: Any]]()
+            for sphere in self.spheres {
+                nodes.append(sphere.toDictionary(lat: self.currentLocation.coordinate.latitude, lng: self.currentLocation.coordinate.longitude))
+                sphere.setEditable(false)
+            }
+            
+            let db = Firestore.firestore()
+            let markUUID = "mark"
+            db.collection("marks").addDocument(data: [markUUID : nodes, "lat" : self.currentLocation.coordinate.latitude, "lng" : self.currentLocation.coordinate.latitude])
+            
+            self.spheres = [] // we forget about these now
         }
     }
     
@@ -104,5 +175,16 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     func sessionInterruptionEnded(_ session: ARSession) {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
+    }
+    
+    // MARK: CoreLocationManagerDelegateMethods
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if (CLLocationManager.authorizationStatus() == .authorizedWhenInUse || CLLocationManager.authorizationStatus() == .authorizedAlways) {
+            currentLocation = manager.location
+        }
     }
 }
