@@ -11,7 +11,7 @@ We've all gone hiking and seen geotagging. We've all seen PokemonGo come and lea
 ## How it's built
 Built entirely with Apple's AR Kit and Google's Firebase, this project utilizes ARKit with SceneKit to render the environment. Marks are sent from our application to the database with the press of a button.
 
-![View of code] (https://firebasestorage.googleapis.com/v0/b/shah-cloud-services.appspot.com/o/c2fe814d-849c-0383-a6b0-a7363c9856b0%3C%3D%3D%3EScreen%20Shot%202019-02-17%20at%209.08.25%20AM.png?alt=media&token=583a89ee-1901-49cc-9f2e-eaf196eb00cf)
+![View of code](https://res.cloudinary.com/devpost/image/fetch/s--TwvhTiPt--/c_limit,f_auto,fl_lossy,q_auto:eco,w_900/https://firebasestorage.googleapis.com/v0/b/shah-cloud-services.appspot.com/o/c2fe814d-849c-0383-a6b0-a7363c9856b0%253C%253D%253D%253EScreen%2520Shot%25202019-02-17%2520at%25209.08.25%2520AM.png%3Falt%3Dmedia%26token%3D583a89ee-1901-49cc-9f2e-eaf196eb00cf)
 _We used Swift, AR Kit, and Google's Firebase_
 
 ## Challenges we ran into
