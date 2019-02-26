@@ -1,5 +1,5 @@
 # mark
-![mark banner](https://firebasestorage.googleapis.com/v0/b/shah-cloud-services.appspot.com/o/29933ad7-a4bb-a18c-7eff-813a6d044790%3C%3D%3D%3Ebanner.png?alt=media&token=c01a4e90-55cf-439b-b18e-047228fe39a7)
+![mark banner](https://res.cloudinary.com/devpost/image/fetch/s--ZM6v1iS_--/c_limit,f_auto,fl_lossy,q_auto:eco,w_900/https://firebasestorage.googleapis.com/v0/b/shah-cloud-services.appspot.com/o/29933ad7-a4bb-a18c-7eff-813a6d044790%253C%253D%253D%253Ebanner.png%3Falt%3Dmedia%26token%3Dc01a4e90-55cf-439b-b18e-047228fe39a7)
 
 ## Inspiration
 We've all gone hiking and seen geotagging. We've all seen PokemonGo come and leave, disrupting our lives in ways we didn't see coming. We believe that AR's purpose is to merge reality with the digital world, and we feel that creativity is essential to utilizing AR in the best way possible. That's why we decided to create mARk, an app where you can make AR Art Pieces (or ARt as we like to call it) and share them with the world.
